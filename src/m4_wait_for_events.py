@@ -24,15 +24,15 @@ The WHILE TRUE pattern:
 Ultimately you should be comfortable with both approaches.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Ryan Antenore.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_until_prime_input()
     run_test_next_prime()
-    run_test_prime_gap()
+    #run_test_prime_gap()
     run_test_wait_for_sum_of_cubes()
 
 
@@ -90,8 +90,15 @@ def sum_until_prime_input():
          Enter an integer greater than 1: 11
          The sum of the input integers is: 167
     """
+    number = int(input('input an integer > 2'))
+    total = 0
+    while is_prime(number) == False:
+        total += number
+        number = int(input('input an integer > 2'))
+    print(total)
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #   The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -163,8 +170,12 @@ def run_test_next_prime():
     # Test 6:
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 5
+    actual = next_prime(5)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
     print('TEST ENDED!')
+
 
 
 def next_prime(m):
@@ -181,8 +192,17 @@ def next_prime(m):
     Type hints:
       :type m: int
     """
+    k = m
+    while True:
+        if is_prime(k):
+            break
+        k += 1
+    return k
+
+
+
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -314,8 +334,16 @@ def prime_gap(m):
     Type hints:
       :type m: int
     """
+    k = 2
+
+    while True:
+        if (next_prime(k + 1) - next_prime(k)) >= m:
+            break
+        k += 1
+    return next_prime(k)
+
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -403,7 +431,10 @@ def run_test_wait_for_sum_of_cubes():
     # Test 7:
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 3
+    actual = wait_for_sum_of_cubes(30.33)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
     print('TEST ENDED!')
 
     # TO DO 6 (continued):
@@ -413,7 +444,10 @@ def run_test_wait_for_sum_of_cubes():
     # Test 8:
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 4
+    actual = wait_for_sum_of_cubes(38)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
     print('TEST ENDED!')
 
 
@@ -450,6 +484,15 @@ def wait_for_sum_of_cubes(x):
     Type hints:
       :type x: float  [or an int]
     """
+    k = 0
+    total = 0
+    while True:
+        k += 1
+        if total >= x:
+            break
+        total += (k ** 3)
+
+    return k
     # ------------------------------------------------------------------
     # TODO: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
