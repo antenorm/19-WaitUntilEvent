@@ -106,7 +106,7 @@ def sum_until_prime_input():
 def run_test_next_prime():
     """ Tests the   next_prime    function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # Done: 3. Implement this TEST function.
     #   It TESTS the  wait_for_prime  function defined below.
     #   Include at least  ** 6 **  tests. (We supplied 5 tests for you.)
     #
@@ -355,7 +355,7 @@ def prime_gap(m):
 def run_test_wait_for_sum_of_cubes():
     """ Tests the   wait_for_sum_of_cubes    function. """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # Done: 6. Implement this TEST function.
     #   It TESTS the  wait_for_sum_of_cubes  function defined below.
     #   Include at least  ** 8 **  tests. (We supplied 6 tests for you.)
     #
@@ -484,17 +484,17 @@ def wait_for_sum_of_cubes(x):
     Type hints:
       :type x: float  [or an int]
     """
-    k = 0
+    k = 1
     total = 0
     while True:
-        k += 1
+        total += k ** 3
         if total >= x:
             break
-        total += (k ** 3)
-
+        k += 1
     return k
+
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
