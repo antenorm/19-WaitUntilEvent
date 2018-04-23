@@ -2,8 +2,9 @@
 This module demonstrates lets you practice INPUT from the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Ryan Antenore.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+import math
 
 
 def main():
@@ -29,8 +30,11 @@ def double_a_float():
          Enter a number: -3.14
          -6.28
     """
+    number = float(input('input a float:'))
+    print(number * 2)
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #   The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -60,8 +64,11 @@ def print_an_integer_many_times():
          10
          10
     """
+    number = int(input('input an even int:'))
+    for k in range(number):
+        print(number * 2)
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -79,8 +86,13 @@ def print_an_integer_many_times_on_one_row():
          Enter an integer: 5
          1010101010
     """
+    number = int(input('input an even int:'))
+    final = ''
+    for k in range(number):
+        final += str(number * 2)
+    print(final)
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   The testing code is already written for you (above).
     #
     # HINT: One way to print on a SINGLE line is to build up a string
@@ -119,8 +131,18 @@ def input_it_all():
          Peace & Love.
          Peace & Love.
     """
+    number1 = float(input('input a float'))
+    number2 = int(input('input an integer'))
+    string = input('input a string')
+
+    for k in range(number2):
+        print(math.sqrt(number1))
+
+    for k in range(number2):
+        print(string)
+
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
